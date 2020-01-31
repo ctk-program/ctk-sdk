@@ -1,0 +1,66 @@
+{
+	"host": "localhost",
+	"port": "4000",
+	"curOrgId": "org",
+	"orderId": "orderer",
+	"consensus": "solo",
+	"manager": true,
+	"orderers": ["orderer"],
+	"orgs": ["org"],
+	"channels": [{
+		"channelConfigPath": "/var/www/go/src/github.com/hyperledger/fabric/testnet/config/sxlchannel.block",
+		"channelId": "sxlchannel",
+		"includes": ["org"]
+	}],
+	"jwt_expiretime": "360000",
+	"projectName": "canlian",
+	"CC_SRC_PATH": "/var/www/go/src/newctkcontract",
+	"keyValueStore": "/var/www/go/src/github.com/hyperledger/fabric/testnet/config/crypto-config/peerOrganizations/example.com/users/Admin@example.com/msp/keystore",
+	"eventWaitTime": "100000",
+	"caUser": "admin",
+	"caSecret": "adminpw",
+	"projectPassword": "",
+	"network-config": {
+		"sxlchannel": {
+			"admin": {
+				"cert": "/var/www/go/src/github.com/hyperledger/fabric/testnet/config/crypto-config/peerOrganizations/example.com/users/Admin@example.com/msp/signcerts",
+				"key": "/var/www/go/src/github.com/hyperledger/fabric/testnet/config/crypto-config/peerOrganizations/example.com/users/Admin@example.com/msp/keystore"
+			},
+			"aliasName": "org",
+			"ca": "https://192.168.3.197:7054",
+			"mspid": "OrgMSP",
+			"name": "OrgMSP",
+			"peers": {
+				"peer": {
+					"events": "grpcs://192.168.3.197:7053",
+					"requests": "grpc://192.168.3.197:7051",
+					"server-hostname": "peer.example.com",
+					"tls_cacerts": "/var/www/go/src/github.com/hyperledger/fabric/testnet/config/crypto-config/peerOrganizations/example.com/peers/peer.example.com/tls/ca.crt"
+				}
+			}
+		},
+		"org": {
+			"admin": {
+				"cert": "/var/www/go/src/github.com/hyperledger/fabric/testnet/config/crypto-config/peerOrganizations/example.com/users/Admin@example.com/msp/signcerts",
+				"key": "/var/www/go/src/github.com/hyperledger/fabric/testnet/config/crypto-config/peerOrganizations/example.com/users/Admin@example.com/msp/keystore"
+			},
+			"aliasName": "org",
+			"ca": "https://192.168.3.197:7054",
+			"mspid": "OrgMSP",
+			"name": "OrgMSP",
+			"peers": {
+				"peer": {
+					"events": "grpcs://192.168.3.197:7053",
+					"requests": "grpc://192.168.3.197:7051",
+					"server-hostname": "peer.example.org",
+					"tls_cacerts": "/var/www/go/src/github.com/hyperledger/fabric/testnet/config/crypto-config/peerOrganizations/example.com/peers/peer.example.com/tls/ca.crt"
+				}
+			}
+		},
+		"orderer": {
+			"server-hostname": "order.example.com",
+			"tls_cacerts": "/var/www/go/src/github.com/hyperledger/fabric/testnet/config/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt",
+			"url": "grpc://192.168.3.197:7050"
+		}
+	}
+}
