@@ -23,7 +23,7 @@
     "log4js": "^0.6.38",
     "method-override": "^2.3.5",
     "mongodb": "^2.2.22",
-    "mongoose": "4.9.2",
+    "mongoose": "5.7.5",
     "node-uuid": "^1.4.8",
     "superagent-promise": "^1.1.0"
   },
