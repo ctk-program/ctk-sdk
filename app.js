@@ -765,9 +765,11 @@ app.get('/channels/:channelName/appname/:appname/block/:blockID', function (req,
     let channelName = req.params.channelName;
     let write = [];
     let obj = {};
+    let txs = [];
     query.getBlockByNumber(peer, req.params.blockID, "admin", "org", req.params.channelName)
         .then(function (message) {
             if (message && typeof message !== 'string') {
+                // console.log(message.data.data[0].payload.header,"==========");
                 let rwset = message.data.data[0].payload.data.actions[0].payload.action.proposal_response_payload.extension.results.ns_rwset;
                 for (let i = 0; i < rwset.length; i++) {
                     if (rwset[i].namespace === appname) {
@@ -777,20 +779,22 @@ app.get('/channels/:channelName/appname/:appname/block/:blockID', function (req,
                     continue;
                 }
                 for (let i = 0; i < write.length; i++) {
-                    console.log(write[i].key);
+                    // console.log(write[i].key);
                     if (write[i].key.indexOf("fromtransactions") == 0 || write[i].key.indexOf("totransactions") == 0 ) {
                         obj = JSON.parse(write[i].value);
-                        break;
+                        txs.push(obj);
                     }
-                    continue;
                 }
-            
+                console.log("*****\n",JSON.stringify(message.data.data[0].payload.header.channel_header));
                 res.json({
                     success: true,
-                    list: [obj]
+                    number:message.header.number,
+                    previous_hash:message.header.previous_hash,
+                    data_hash:message.header.data_hash,
+                    timestamp:message.data.data[0].payload.header.channel_header.timestamp,
+                    list: txs
                 });
             } else {
-                logger.info(message);
                 let jmsg = message;
                 if (jmsg && typeof jmsg !== 'string') {
                     res.json({

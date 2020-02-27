@@ -27,13 +27,13 @@
 				"key": "/var/www/go/src/github.com/hyperledger/fabric/testnet/config/crypto-config/peerOrganizations/example.com/users/Admin@example.com/msp/keystore"
 			},
 			"aliasName": "org",
-			"ca": "https://192.168.3.197:7054",
+			"ca": "https://192.168.1.5:7054",
 			"mspid": "OrgMSP",
 			"name": "OrgMSP",
 			"peers": {
 				"peer": {
-					"events": "grpcs://192.168.3.197:7053",
-					"requests": "grpc://192.168.3.197:7051",
+					"events": "grpcs://192.168.1.5:7053",
+					"requests": "grpc://192.168.1.5:7051",
 					"server-hostname": "peer.example.com",
 					"tls_cacerts": "/var/www/go/src/github.com/hyperledger/fabric/testnet/config/crypto-config/peerOrganizations/example.com/peers/peer.example.com/tls/ca.crt"
 				}
@@ -45,13 +45,13 @@
 				"key": "/var/www/go/src/github.com/hyperledger/fabric/testnet/config/crypto-config/peerOrganizations/example.com/users/Admin@example.com/msp/keystore"
 			},
 			"aliasName": "org",
-			"ca": "https://192.168.3.197:7054",
+			"ca": "https://192.168.1.5:7054",
 			"mspid": "OrgMSP",
 			"name": "OrgMSP",
 			"peers": {
 				"peer": {
-					"events": "grpcs://192.168.3.197:7053",
-					"requests": "grpc://192.168.3.197:7051",
+					"events": "grpcs://192.168.1.5:7053",
+					"requests": "grpc://192.168.1.5:7051",
 					"server-hostname": "peer.example.org",
 					"tls_cacerts": "/var/www/go/src/github.com/hyperledger/fabric/testnet/config/crypto-config/peerOrganizations/example.com/peers/peer.example.com/tls/ca.crt"
 				}
@@ -60,7 +60,7 @@
 		"orderer": {
 			"server-hostname": "order.example.com",
 			"tls_cacerts": "/var/www/go/src/github.com/hyperledger/fabric/testnet/config/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt",
-			"url": "grpc://192.168.3.197:7050"
+			"url": "grpc://192.168.1.5:7050"
 		}
 	}
 }

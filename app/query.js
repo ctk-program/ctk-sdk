@@ -101,7 +101,6 @@ var getBlockByNumber = function (peer, blockNumber, username, org, channelId) {
     }).then((response_payloads) => {
         if (response_payloads) {
             //logger.debug(response_payloads);
-            logger.debug(response_payloads);
             return response_payloads; //response_payloads.data.data[0].buffer;
         } else {
             logger.error('response_payloads is null');
