@@ -20,7 +20,7 @@
     "fabric-ca-client": "^1.1.0",
     "fabric-client": "^1.1.0",
     "jsonwebtoken": "^7.3.0",
-    "log4js": "^0.6.38",
+    "log4js": "^6.4.0",
     "method-override": "^2.3.5",
     "mongodb": "^2.2.22",
     "mongoose": "4.9.2",
