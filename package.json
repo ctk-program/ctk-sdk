@@ -7,7 +7,7 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "async": "^2.1.2",
+    "async": "^2.6.4",
     "body-parser": "^1.15.0",
     "config": "^1.21.0",
     "cookie-parser": "^1.4.3",
