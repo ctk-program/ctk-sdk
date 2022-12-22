@@ -19,7 +19,7 @@
     "express-validator": "^2.20.5",
     "fabric-ca-client": "^1.1.0",
     "fabric-client": "^1.1.0",
-    "jsonwebtoken": "^7.3.0",
+    "jsonwebtoken": "^9.0.0",
     "log4js": "^0.6.38",
     "method-override": "^2.3.5",
     "mongodb": "^2.2.22",
